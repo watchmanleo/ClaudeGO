@@ -67,6 +67,8 @@ cd ClaudeGO
 
 Then open `http://your-server-ip:3000` in your browser.
 
+> 💡 **Tip:** To access ClaudeGO from anywhere (phone, tablet, etc.), your server needs a **public IP** or domain, and the port (default 3000) must be open in your firewall.
+
 ### 📋 Requirements
 
 - Node.js >= 18.0.0
@@ -135,6 +137,8 @@ cd ClaudeGO
 ```
 
 然后在浏览器打开 `http://你的服务器IP:3000`。
+
+> 💡 **提示：** 要实现随时随地跨端访问，你的服务器需要有**公网 IP** 或域名，并在防火墙开放对应端口（默认 3000）。
 
 ### 📋 环境要求
 
