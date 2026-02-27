@@ -1,211 +1,185 @@
-# ClaudeGO v0.9.5 (开源版)
+<div align="center">
 
-**Claude Code on the go** - 随时随地使用 Claude Code
+# 🚀 ClaudeGO
 
-by Leo | qq6699609@hotmail.com
+### Claude Code on the Go — 随时随地，掌控 AI 编程
 
-## 项目介绍
+[![GitHub stars](https://img.shields.io/github/stars/watchmanleo/ClaudeGO?style=social)](https://github.com/watchmanleo/ClaudeGO)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Node.js Version](https://img.shields.io/badge/node-%3E%3D18.0.0-brightgreen)](https://nodejs.org/)
 
-ClaudeGO 是一个专为移动端优化的 Web SSH 终端应用，核心实现了 Claude Code 随时随地、跨端���用。
+[English](#english) | [中文](#中文)
 
-允许用户在个人 Linux 服务器上部署后，通过手机、pad、电脑登录其 Claude Code，实现多设备无缝切换、继续任务。
+<img src="docs/terminal.png" alt="ClaudeGO Screenshot" width="600">
 
-### 主要特性
+</div>
 
-#### 移动端优化
-- ✅ 虚拟方向键 - 精确控制光标位置
-- ✅ 自定义滚动条 - 流畅查看历史记录
-- ✅ 触摸滑动支持 - 自然的滚动体验
-- ✅ 键盘自适应 - 智能避免遮挡
-- ✅ 响应式设计 - 适配各种屏幕尺寸
+---
 
-#### 主题系统
-- **Dark 模式（默认）**：Mac Terminal Pro 配色
-- **Light 模式**：Mac Terminal Basic 配色
-- 一键切换，设置持久化
+<a name="english"></a>
+## 🌍 English
 
-#### 智能自动化
-- 登录后自动创建/附加 tmux 会话
-- 自动启动 Claude Code
-- 会话保持，支持锁屏、切换应用后恢复
+### Why ClaudeGO?
 
-#### 用户体验
-- 欢迎动画
-- About 信息面板
-- 中文界面
-- 流畅的交互动画
+**Anthropic just released the official Claude Code mobile app** — and that's great news! But if you're like us, you might want:
 
-## 快速开始
+- 🔒 **Full control** over your data and environment
+- 🖥️ **Your own server** with your own configurations
+- 🌐 **No geo-restrictions** — access from anywhere
+- 💰 **Use your own API key** — no subscription required
+- 🔧 **Customization** — tweak it however you want
 
-### 环境要求
-- Node.js >= 18.0.0
-- Linux/Unix 系统
-- SSH 服务
-- tmux（推荐，用于会话持久化）
-- Claude Code CLI（需单独安装）
+**ClaudeGO is your self-hosted alternative.** Deploy it on your Linux server, and access Claude Code from any device — phone, tablet, or computer — with a seamless, mobile-optimized experience.
 
-### 一键安装
+### ✨ Features
+
+| Feature | Description |
+|---------|-------------|
+| 📱 **Mobile-First Design** | Virtual arrow keys, touch scrolling, keyboard-aware layout |
+| 🔄 **Session Persistence** | tmux integration — switch devices without losing context |
+| 🎨 **Theme Support** | Dark (Mac Terminal Pro) / Light (Mac Terminal Basic) |
+| ⚡ **Auto-Launch** | Automatically starts Claude Code after login |
+| 🌐 **Cross-Platform** | Works on any device with a modern browser |
+| 🔐 **Self-Hosted** | Your server, your data, your rules |
+
+### 🚀 Quick Start
 
 ```bash
-# 克隆项目
-git clone https://github.com/your-username/ClaudeGO.git
+# Clone the repository
+git clone https://github.com/watchmanleo/ClaudeGO.git
 cd ClaudeGO
 
-# 运行安装脚本（自动检查并安装依赖）
+# One-line install (checks dependencies automatically)
 ./install.sh
-```
 
-安装脚本会自动：
-- 检查 Node.js 版本（需要 >= 18）
-- 检查并安装 SSH 服务
-- 检查并安装 tmux
-- 安装 npm 依赖
-- 构建项目
-
-### 手动安装
-
-```bash
-# 1. 安装依赖
-npm install
-
-# 2. 构建项目
-npm run build
-
-# 3. 启动服务
-npm start
-# 或指定端口
-PORT=3000 npm start
-```
-
-### 访问应用
-
-```
-http://your-server-ip:3000/
-```
-
-使用你的 Linux 系统用户名和密码登录。
-
-## 配置说明
-
-### 环境变量
-
-```bash
-PORT=3000                                    # 服务端口
-SSHHOST=localhost                            # SSH主机
-SSHPORT=22                                   # SSH端口
-BASE=/                                       # URL基础路径
-TITLE="ClaudeGO - Claude Code on the go"    # 网站标题
-```
-
-### 配置文件
-
-编辑 `conf/config.json5` 进行详细配置：
-
-```json5
-{
-  ssh: {
-    host: 'localhost',
-    auth: 'password',
-    port: 22,
-  },
-  server: {
-    base: '/',
-    port: 3000,
-    host: '0.0.0.0',
-    title: 'ClaudeGO - Claude Code on the go',
-  },
-}
-```
-
-## 部署为系统服务
-
-### 使用 systemd
-
-```bash
-# 1. 复制服务文件
-sudo cp conf/claudego.service /etc/systemd/system/
-
-# 2. 编辑服务文件，修改路径
-sudo nano /etc/systemd/system/claudego.service
-
-# 3. 重载 systemd
-sudo systemctl daemon-reload
-
-# 4. 启用并启动服务
-sudo systemctl enable claudego
-sudo systemctl start claudego
-
-# 5. 查看状态
-sudo systemctl status claudego
-```
-
-### 使用启动脚本
-
-```bash
-# 启动（默认端口 3000）
+# Start the server
 ./start.sh
-
-# 指定端口
-./start.sh 8080
 ```
 
-## 技术架构
+Then open `http://your-server-ip:3000` in your browser.
 
-### 前端
-- xterm.js - 终端模拟器
-- Socket.IO Client - WebSocket 通信
-- TypeScript - 类型安全
-- SCSS - 样式管理
+### 📋 Requirements
 
-### 后端
-- Node.js + Express - Web 服务器
-- Socket.IO - WebSocket 服务
-- node-pty - 伪终端
-- TypeScript - 类型安全
+- Node.js >= 18.0.0
+- Linux/Unix server
+- SSH service
+- tmux (recommended)
+- [Claude Code CLI](https://docs.anthropic.com/en/docs/claude-code) installed
 
-### 构建工具
-- Snowpack - 快速构建
-- Sass - CSS 预处理
-- ESLint - 代码检查
+### 🛠️ Configuration
 
-## 安全建议
-
-1. **使用 HTTPS**：建议通过 Nginx 反向代理并配置 SSL 证书
-2. **防火墙**：限制访问端口，只允许信任的 IP
-3. **强密码**：确保 Linux 用户使用强密码
-4. **定期更新**：保持系统和依赖包更新
-
-### Nginx 反向代理示例
-
-```nginx
-server {
-    listen 443 ssl;
-    server_name your-domain.com;
-
-    ssl_certificate /path/to/cert.pem;
-    ssl_certificate_key /path/to/key.pem;
-
-    location / {
-        proxy_pass http://127.0.0.1:3000;
-        proxy_http_version 1.1;
-        proxy_set_header Upgrade $http_upgrade;
-        proxy_set_header Connection "upgrade";
-        proxy_set_header Host $host;
-        proxy_set_header X-Real-IP $remote_addr;
-    }
-}
+Environment variables:
+```bash
+PORT=3000                    # Server port
+SSHHOST=localhost            # SSH host
+SSHPORT=22                   # SSH port
 ```
 
-## 致谢
+Or edit `conf/config.json5` for advanced settings.
 
-本项目基于 [WeTTY](https://github.com/butlerx/wetty) 开发，感谢原作者 Cian Butler 及所有贡献者的工作。
+### 🔒 Security Recommendations
 
-## 版本信息
+1. **Use HTTPS** — Set up Nginx reverse proxy with SSL
+2. **Firewall** — Restrict access to trusted IPs
+3. **Strong passwords** — Use secure Linux user credentials
 
-- **当前版本**：v0.9.5 (开源版)
-- **开发者**：Leo
-- **联系方式**：qq6699609@hotmail.com
+---
 
-## 许可证
+<a name="中文"></a>
+## 🇨🇳 中文
 
-MIT License
+### 为什么选择 ClaudeGO？
+
+**Anthropic 刚刚发布了官方的 Claude Code 手机端** —— 这是个好消息！但如果你和我们一样，可能还需要：
+
+- 🔒 **完全掌控** 自己的数据和环境
+- 🖥️ **自己的服务器**，自己的配置
+- 🌐 **无地域限制** —— 随时随地访问
+- 💰 **使用自己的 API Key** —— 无需订阅
+- 🔧 **自由定制** —— 想怎么改就怎么改
+
+**ClaudeGO 是你的私有化替代方案。** 部署在你的 Linux 服务器上，从任何设备 —— 手机、平板、电脑 —— 访问 Claude Code，享受专为移动端优化的流畅体验。
+
+### ✨ 核心特性
+
+| 特性 | 说明 |
+|------|------|
+| 📱 **移动端优先** | 虚拟方向键、触摸滚动、键盘自适应布局 |
+| 🔄 **会话保持** | tmux 集成 —— 换设备不丢上下文 |
+| 🎨 **主题切换** | 深色 (Mac Terminal Pro) / 浅色 (Mac Terminal Basic) |
+| ⚡ **自动启动** | 登录后自动启动 Claude Code |
+| 🌐 **跨平台** | 任何现代浏览器都能用 |
+| 🔐 **私有部署** | 你的服务器，你的数据，你做主 |
+
+### 🚀 快速开始
+
+```bash
+# 克隆仓库
+git clone https://github.com/watchmanleo/ClaudeGO.git
+cd ClaudeGO
+
+# 一键安装（自动检查依赖）
+./install.sh
+
+# 启动服务
+./start.sh
+```
+
+然后在浏览器打开 `http://你的服务器IP:3000`。
+
+### 📋 环境要求
+
+- Node.js >= 18.0.0
+- Linux/Unix 服务器
+- SSH 服务
+- tmux（推荐）
+- 已安装 [Claude Code CLI](https://docs.anthropic.com/en/docs/claude-code)
+
+### 🛠️ 配置说明
+
+环境变量：
+```bash
+PORT=3000                    # 服务端口
+SSHHOST=localhost            # SSH 主机
+SSHPORT=22                   # SSH 端口
+```
+
+或编辑 `conf/config.json5` 进行高级配置。
+
+### 🔒 安全建议
+
+1. **使用 HTTPS** —— 配置 Nginx 反向代理 + SSL 证书
+2. **防火墙** —— 限制可访问的 IP
+3. **强密码** —— 使用安全的 Linux 用户密码
+
+---
+
+<div align="center">
+
+## 🤝 Contributing
+
+PRs welcome! Feel free to open issues or submit pull requests.
+
+欢迎贡献代码！可以提 Issue 或 PR。
+
+## 📄 License
+
+MIT License — Use it however you want.
+
+## 💖 Acknowledgments
+
+Built on [WeTTY](https://github.com/butlerx/wetty). Thanks to all contributors!
+
+基于 [WeTTY](https://github.com/butlerx/wetty) 开发，感谢所有贡献者！
+
+---
+
+**If this project helps you, please give it a ⭐!**
+
+**如果这个项目对你有帮助，请给个 ⭐ 支持一下！**
+
+<br>
+
+Made with ❤️ by [Leo](mailto:qq6699609@hotmail.com)
+
+</div>
