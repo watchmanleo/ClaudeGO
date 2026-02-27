@@ -30,8 +30,9 @@
 
 ### Why ClaudeGO?
 
-**Anthropic just released the official Claude Code mobile app** — and that's great news! But if you're like us, you might want:
+**Anthropic just released the official Claude Code Remote Control** — but it's Mac-only. If you're running Claude Code on a **Linux server**, ClaudeGO is your solution:
 
+- 🐧 **Linux support** — works on any Linux server (official only supports Mac)
 - 🔒 **Full control** over your data and environment
 - 🖥️ **Your own server** with your own configurations
 - 🌐 **No geo-restrictions** — access from anywhere
@@ -101,8 +102,9 @@ Or edit `conf/config.json5` for advanced settings.
 
 ### 为什么选择 ClaudeGO？
 
-**Anthropic 刚刚发布了官方的 Claude Code 手机端** —— 这是个好消息！但如果你和我们一样，可能还需要：
+**Anthropic 刚发布了官方的 Claude Code Remote Control** —— 但只支持 Mac。如果你在 **Linux 服务器** 上跑 Claude Code，ClaudeGO 就是你的解决方案：
 
+- 🐧 **支持 Linux** —— 任何 Linux 服务器都能用（官方只支持 Mac）
 - 🔒 **完全掌控** 自己的数据和环境
 - 🖥️ **自己的服务器**，自己的配置
 - 🌐 **无地域限制** —— 随时随地访问
