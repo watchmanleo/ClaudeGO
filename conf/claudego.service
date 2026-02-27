@@ -1,0 +1,25 @@
+# systemd unit file for ClaudeGO
+#
+# 1. Copy this file to /etc/systemd/system/claudego.service
+# 2. Edit WorkingDirectory and ExecStart paths to match your installation
+# 3. Run: systemctl daemon-reload
+# 4. Run: systemctl enable claudego.service
+# 5. Run: systemctl start claudego.service
+
+[Unit]
+Description=ClaudeGO Web Terminal
+After=network.target
+
+[Service]
+Type=simple
+User=ubuntu
+WorkingDirectory=/home/ubuntu/ClaudeGO
+ExecStart=/usr/bin/node build/main.js -p 3000 --host 0.0.0.0
+TimeoutStopSec=20
+KillMode=mixed
+Restart=always
+RestartSec=2
+Environment=NODE_ENV=production
+
+[Install]
+WantedBy=multi-user.target

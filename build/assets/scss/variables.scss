@@ -1,0 +1,44 @@
+// Mac Terminal Pro (Dark) - Default Theme
+$pro-bg: #000000;
+$pro-fg: #f2f2f2;
+$pro-cursor: #4d4d4d;
+$pro-selection: #414453;
+
+// Mac Terminal Basic (Light) Theme
+$basic-bg: #ffffff;
+$basic-fg: #000000;
+$basic-cursor: #7f7f7f;
+$basic-selection: #b2d7ff;
+
+// Legacy variables (keep for compatibility)
+$black: #000;
+$grey: rgba(0, 0, 0, 0.75);
+$white: #fff;
+$lgrey: #ccc;
+
+// CSS Custom Properties for theme switching
+:root {
+  // Default to Dark (Pro) theme
+  --theme-bg: #{$pro-bg};
+  --theme-fg: #{$pro-fg};
+  --theme-cursor: #{$pro-cursor};
+  --theme-selection: #{$pro-selection};
+  --theme-overlay-bg: rgba(0, 0, 0, 0.85);
+  --theme-overlay-text: #ffffff;
+  --theme-button-bg: #333333;
+  --theme-button-text: #ffffff;
+  --theme-button-border: #555555;
+}
+
+// Light (Basic) theme
+:root[data-theme="light"] {
+  --theme-bg: #{$basic-bg};
+  --theme-fg: #{$basic-fg};
+  --theme-cursor: #{$basic-cursor};
+  --theme-selection: #{$basic-selection};
+  --theme-overlay-bg: rgba(255, 255, 255, 0.9);
+  --theme-overlay-text: #000000;
+  --theme-button-bg: #f0f0f0;
+  --theme-button-text: #000000;
+  --theme-button-border: #cccccc;
+}

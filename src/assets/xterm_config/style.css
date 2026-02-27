@@ -1,0 +1,97 @@
+html {
+  background-color: var(--theme-bg);
+  color: var(--theme-fg);
+}
+html,
+body {
+  overflow: hidden auto;
+}
+body {
+  display: flex;
+  flex-flow: column nowrap;
+  font-family: Monaco, "SF Mono", Menlo, monospace;
+  font-size: 1rem;
+  color: var(--theme-fg);
+}
+.templ {
+  display: none;
+}
+h1, h2 {
+  text-align: center;
+  color: var(--theme-fg);
+}
+h2 {
+  text-decoration: underline;
+}
+
+header {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+}
+header button {
+  padding: 0.5em;
+  font-size: 1em;
+  margin: 0.5em;
+  border-radius: 0.5em;
+  background-color: var(--theme-button-bg);
+  color: var(--theme-button-text);
+  border: 1px solid var(--theme-button-border);
+  cursor: pointer;
+}
+
+.boolean_option,
+.number_option,
+.color_option,
+.enum_option,
+.text_option {
+  display: grid;
+  grid-template-columns: 100fr min(30em, 50%);
+  grid-template-rows: auto;
+  align-items: center;
+  padding: 0.5em 1em;
+}
+
+.boolean_option p,
+.number_option p,
+.color_option p,
+.enum_option p,
+.text_option p {
+  color: var(--theme-fg);
+}
+
+.boolean_option input,
+.number_option input,
+.color_option input,
+.text_option input,
+.enum_option select {
+  margin: 0 0.5em;
+  font-size: 1em;
+  background-color: var(--theme-button-bg);
+  color: var(--theme-button-text);
+  border: 2px solid var(--theme-button-border);
+}
+
+.number_option input,
+.text_option input,
+.enum_option select {
+  padding: 0.4em;
+}
+.boolean_option input {
+  width: 2em;
+  height: 2em;
+  font-size: 0.75em;
+  justify-self: center;
+}
+.color_option input {
+  width: 100%;
+  height: 100%;
+  background-color: lightgray;
+}
+
+.unbounded .title::before {
+  content: 'UNBOUND OPTION ';
+  color: red;
+  font-weight: bold;
+}

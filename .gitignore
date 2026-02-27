@@ -1,0 +1,31 @@
+# Dependencies
+node_modules/
+
+# Build output (users should build locally)
+# build/
+
+# Logs
+*.log
+claudego.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Environment
+.env
+.env.local
+
+# Yarn
+.yarn/
+.pnp.*
+yarn-error.log
+
+# Lock files (keep package-lock.json for reproducible builds)
+yarn.lock

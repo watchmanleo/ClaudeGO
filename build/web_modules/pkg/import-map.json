@@ -1,0 +1,14 @@
+{
+  "imports": {
+    "@fortawesome/fontawesome-svg-core": "./@fortawesome/fontawesome-svg-core.js",
+    "@fortawesome/free-solid-svg-icons": "./@fortawesome/free-solid-svg-icons.js",
+    "file-type": "./file-type.js",
+    "lodash": "./lodash.js",
+    "socket.io-client": "./socket.io-client.js",
+    "toastify-js": "./toastify-js.js",
+    "xterm": "./xterm.js",
+    "xterm-addon-fit": "./xterm-addon-fit.js",
+    "xterm-addon-image": "./xterm-addon-image.js",
+    "xterm-addon-web-links": "./xterm-addon-web-links.js"
+  }
+}

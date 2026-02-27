@@ -1,0 +1,152 @@
+@use 'xterm/css/xterm.css';
+@use 'toastify-js/src/toastify.css';
+@use './variables';
+@use './overlay';
+@use './options';
+@use './terminal';
+
+html,
+body {
+  background-color: var(--theme-bg);
+  color: var(--theme-fg);
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+
+  .toastify {
+    border-radius: 0;
+    color: var(--theme-fg);
+  }
+}
+
+.xterm {
+  .xterm-viewport {
+    overflow-y: hidden;
+  }
+}
+
+// Theme toggle button and About button
+#theme-toggle,
+#about-button {
+  position: fixed;
+  z-index: 1000;
+  padding: 0;
+  border: 1px solid var(--theme-button-border);
+  border-radius: 4px;
+  background-color: var(--theme-button-bg);
+  color: var(--theme-button-text);
+  font-family: Monaco, "SF Mono", Menlo, monospace;
+  font-size: 12px;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+  opacity: 0.7;
+  text-align: center;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+}
+
+#theme-toggle {
+  top: 10px;
+  right: 78px;
+  width: 60px;
+  height: 32px;
+  line-height: 32px;
+}
+
+#about-button {
+  top: 10px;
+  right: 10px;
+  width: 60px;
+  height: 32px;
+  line-height: 32px;
+}
+
+// About panel
+#about-panel {
+  position: fixed;
+  top: 50px;
+  right: 10px;
+  z-index: 999;
+  width: 90%;
+  max-width: 500px;
+  padding: 20px;
+  border: 1px solid var(--theme-button-border);
+  border-radius: 8px;
+  background-color: var(--theme-bg);
+  color: var(--theme-fg);
+  font-family: Monaco, "SF Mono", Menlo, monospace;
+  font-size: 13px;
+  line-height: 1.6;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  display: none;
+
+  &.show {
+    display: block;
+    animation: slideDown 0.3s ease-out;
+  }
+
+  h3 {
+    margin: 0 0 15px 0;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  p {
+    margin: 10px 0;
+  }
+
+  .problem {
+    margin: 15px 0;
+    padding-left: 10px;
+  }
+
+  .problem-title {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+
+  .solution {
+    color: var(--theme-fg);
+    opacity: 0.9;
+    padding-left: 10px;
+  }
+
+  .next-section {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid var(--theme-button-border);
+    font-style: italic;
+    opacity: 0.8;
+  }
+
+  .highlight {
+    color: #198C52;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  #about-panel {
+    width: calc(100% - 40px);
+    right: 10px;
+    left: 10px;
+    max-width: none;
+    font-size: 12px;
+  }
+}
