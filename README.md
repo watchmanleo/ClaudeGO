@@ -10,7 +10,16 @@
 
 [English](#english) | [中文](#中文)
 
-<img src="docs/terminal.png" alt="ClaudeGO Screenshot" width="600">
+<table>
+<tr>
+<td align="center"><b>💻 PC Browser</b></td>
+<td align="center"><b>📱 Mobile Browser</b></td>
+</tr>
+<tr>
+<td><img src="docs/screenshots/pc.jpeg" alt="ClaudeGO on PC" width="500"></td>
+<td><img src="docs/screenshots/mobile.jpeg" alt="ClaudeGO on Mobile" width="250"></td>
+</tr>
+</table>
 
 </div>
 
