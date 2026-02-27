@@ -16,8 +16,8 @@
 <td align="center"><b>📱 Mobile Browser</b></td>
 </tr>
 <tr>
-<td><img src="docs/screenshots/pc.jpeg" alt="ClaudeGO on PC" width="500"></td>
-<td><img src="docs/screenshots/mobile.jpeg" alt="ClaudeGO on Mobile" width="250"></td>
+<td><img src="docs/screenshots/pc.jpeg" alt="ClaudeGO on PC" height="400"></td>
+<td><img src="docs/screenshots/mobile.jpeg" alt="ClaudeGO on Mobile" height="400"></td>
 </tr>
 </table>
 
@@ -175,17 +175,22 @@ PRs welcome! Feel free to open issues or submit pull requests.
 
 MIT License — Use it however you want.
 
-## 💖 Acknowledgments
-
-Built on [WeTTY](https://github.com/butlerx/wetty). Thanks to all contributors!
-
-基于 [WeTTY](https://github.com/butlerx/wetty) 开发，感谢所有贡献者！
-
 ---
 
-**If this project helps you, please give it a ⭐!**
+### ⭐ Like it? Give it a star!
 
-**如果这个项目对你有帮助，请给个 ⭐ 支持一下！**
+**If this project saves you time, a ⭐ would mean a lot!**
+
+**如果这个项目对你有帮助，点个 ⭐ 就是最大的支持！**
+
+<br>
+
+<details>
+<summary>☕ Buy me a coffee | 请我喝杯咖啡</summary>
+<br>
+<img src="docs/screenshots/wechat.png" alt="WeChat Pay" width="200">
+<p><i>Thanks for your support! 感谢支持！</i></p>
+</details>
 
 <br>
 
